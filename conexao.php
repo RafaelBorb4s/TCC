@@ -2,7 +2,7 @@
 //Configurações Gerais
 $hostname = "localhost";
 $user = "root";
-$password = "R@fael1974.";
+$password = "";
 $database = "cadastro";
 
 $conexao = mysqli_connect($hostname, $user, $password, $database);
