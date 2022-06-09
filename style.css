@@ -1,0 +1,719 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#ultimas{
+    width: 15.5%;
+}
+
+h1{
+    background-color: #210070;
+    border: 2px solid #210070;
+    border-radius: 12px;
+    color: white;
+    text-align: center;
+    background-color: #210070;
+    padding: 10px;
+}
+
+.container{
+    text-align: center;
+    margin-left: 17%;
+}
+
+#inicio img{
+    vertical-align: middle;
+    border-style: none;
+}
+
+h3{
+    background-color: #213970;
+    color: white;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+h3:hover{
+    background-color: white;
+    color: black;
+}
+
+.titulo{
+    padding: 20px;
+    width: 78%;
+}
+
+#inicio .coluna{
+    position: relative;
+    margin: 0px;
+    padding: 1px;
+    border: 1px solid white;
+    max-width: 25%;
+}
+
+#pesquisar{
+    margin-top: 10px;
+    width: 170px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    padding: 12px 20px 12px 40px;
+    transition: width 0.4s ease-in-out;
+}
+
+#pesquisar[type=text]:focus{
+    width: 90%;
+}
+
+.btn_pesquisar{
+    width: 32px;
+    height: 40px;
+}
+
+.center{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cabeca{
+    display: flex;
+}
+
+.botao_login{
+    border: 2px solid #213970;
+    border-radius: 12px;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    background-color: white; 
+    color: black; 
+    border: 2px solid #213970;
+}
+
+.registrar{
+    padding: 10px;
+    text-align: center;
+}
+
+.btn_re, .btn_sair{
+    background-color: #210070;
+    border: none;
+    color: white;
+    padding: 10px 26px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+}
+
+.btn_re:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+.btn_sair{
+    margin-left: 17%;
+    margin-top: 2%;
+}
+
+
+.left{
+    position: absolute;
+    top: 30px;
+    right: 16px;
+    font-size: 18px;
+}
+
+.left_sessao{
+    background-color: white;
+    position: absolute;
+    top: 30px;
+    right: 16px;
+    font-size: 18px;
+    width: 30%;
+    text-align: right;
+}
+
+
+h2{
+    text-shadow: 2px 2px 5px #213970;
+}
+
+
+.botao_login:hover{
+    background-color: #213970;
+    color: white;
+}
+
+
+.rodape{
+    background-color: #210070;
+    border: 2px solid #210070;
+    border-radius: 12px;
+    margin-top: 50px;
+    padding: 5px;
+    display: block;
+    color: whitesmoke;
+    width: auto;
+    height: 200px;
+    text-align: center;
+    line-height: 200px;
+}
+
+/* Parte da pagina de login */
+
+.logar{
+    background-color: #213970;
+}
+
+
+.link_login, #login_usuario, #login_senha, #labelusuario, #labelemail, #labelsenha, #labelconfsenha{
+    font-size: .8rem;
+}
+
+.link_login:hover{
+    color: #210070;
+}
+
+.log{
+    background-color: white;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 30px;
+    margin-top: 10vh;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#form_login, #frm1{
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+#login_usuario, #login_senha, #login_input_usuario, #login_input_senha, #cadconfsenha, #cadpassword, #cademail, #cadusuario{
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+
+#login_usuario, #login_senha, #labelusuario, #labelemail, #labelsenha, #labelconfsenha{
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px;
+}
+
+#login_input_usuario, #login_input_senha, #cadconfsenha, #cadpassword, #cademail, #cadusuario{
+    border-bottom: 2px solid #213970;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.log_usuario{
+    margin-bottom: 20px;
+}
+
+.log_senha{
+    margin-bottom: 20px;
+}
+
+input:focus{
+    border-bottom: 2px solid #210070;
+}
+
+.esqueceu_senha{
+    text-align: right;
+    display: block;
+}
+
+.botao_logar{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    border: none;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 30px;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    width: 100%;
+}
+
+.botao_logar:hover{
+    background-color: #210070;
+    transition: .5s;
+
+}
+
+.msg{
+    padding: 15px;
+    background-color: red;
+    margin-top: 20px;
+    color: white;
+    font-size: 24px;
+    
+}
+
+.p_register{
+    margin-bottom: 10px;
+}
+
+.check_login{
+    text-align: left;
+}
+
+/*Paginas*/
+
+.conteudo{
+    top: 30%;
+    width: 86%;
+    padding: 95px;
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: gray;
+}
+
+#sem_publi{
+    color: white;
+    font-size: 32px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+.publi{
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    border: solid;
+    margin-bottom: 10px;
+}
+
+#editar_publi{
+    margin-left: 73%;
+    position: absolute;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+#deletar_publi{
+    margin-left: 77%;
+    text-decoration: none;
+    color: red;
+    position: absolute;
+    cursor: pointer;
+}
+
+.confirma{
+    background-color: red;
+    width: 25%;
+    margin-left: 40%;
+    padding: 1%;
+    
+}
+
+/*Publicações*/
+.nome{
+    border-bottom: solid;
+    padding: 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.Valor{
+    width: 100%;
+    padding: 10px;
+}
+
+.Link_publi{
+    width: 100%;
+    padding: 10px;
+}
+
+
+
+#link_publi{
+    text-decoration: none;
+    background-color: black;
+    color: whitesmoke;
+}
+
+.data_publi{
+    width: 98%;
+    padding: 10px;
+    text-align: right;
+}
+
+.desc{
+    width: 100%;
+    padding: 10px;
+}
+
+/*Acaba Publicações*/
+
+.bar_menu{
+    margin-top: 15px;
+}
+
+ul {
+    list-style-type: none;
+    overflow: hidden;
+    background-color: #210070;
+}
+  
+li {
+    float: left;
+    border-right:1px solid white;
+    border-bottom:1px solid white;
+    width: 19.93%;
+}
+  
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+  
+li a:hover {
+    border: #213970;
+    background-color: #213970;
+    
+}
+
+.titulo_paginas{
+    padding: 20px;
+    text-align: center;
+}
+
+/*Parte da janela modal de publicação*/
+
+.Modal{
+    font-family: sans-serif;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    animation: animate;
+    animation-duration: 800ms;
+}
+
+.modal_form{
+    width: 50%;
+    margin-left: 25%;
+    background-color: white;
+    margin-top: 10%;
+}
+
+.titulo_modal{
+    font-size: 100%;
+    text-align: center;
+}
+
+@keyframes animate {
+    from{opacity: 1;}
+    from{opacity: 0;}
+
+}
+
+.btn_fechar{
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    justify-content: center;
+    text-align: center;
+    color: black;
+    border-radius: 50%;
+    float: right;
+    cursor: pointer;
+}
+
+.modal_input{
+    width: 80%;
+    margin-left: 10%;
+    justify-content: center;
+}
+
+#label_modal{
+    width: 90%;
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    border: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: black;
+    color: white;
+}
+
+#h2_modal{
+    background-color: white;
+    width: 60%;
+    margin-left: 20%;
+    margin-bottom: 100px;
+}
+
+#input_modal{
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.col-25 {
+    background-color: white;
+    text-align: center;
+    border-radius: 4px;
+    float: left;
+    width: 15%;
+    margin-top: 6px;
+    margin-left: 5%;
+}
+  
+.col-75 {
+    float: left;
+    width: 70%;
+    margin-top: 6px;
+    margin-left: 5px;
+}
+
+.modal_footer{
+    margin-top: 9%;
+    padding: 5%;
+}
+
+.btn_modal{
+    width: 100%;
+    padding: 20px;
+    background-color: #213970;
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.btn_modal:hover{
+    background-color: #210070;
+    transition: .5s;
+}
+
+/*Acaba aqui a parte do modal*/
+
+.publicar, .publicar_logado{
+    position: relative  ;
+    width: 100%;
+}
+
+.botao_publicar{
+    position: fixed;
+    bottom: 8px;
+    right: 16px;
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    border: none;
+    color: black;
+    border-radius: 20px;
+    background-color: white;
+    height: 40px;
+    width: 150px;
+    cursor: no-drop;
+}
+
+.botao_publicar:hover{
+    background-color: #213970;
+    color: white;
+    transition: .5s;
+    
+}
+
+.botao_publicar_autenticado{
+    position: fixed;
+    bottom: 8px;
+    right: 16px;
+    font-size: 18px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    border: none;
+    color: black;
+    border-radius: 20px;
+    background-color: white;
+    height: 40px;
+    width: 150px;
+    cursor: pointer;
+}
+
+.botao_publicar_autenticado:hover{
+    background-color: #213970;
+    color: white;
+    transition: .5s;
+    
+}
+/*Cadastro*/
+
+.botao_cadastrar{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    border: none;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 30px;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    width: 40%;
+    
+}
+
+input.invalido{
+    border: 1px solid red;
+}
+
+.erro{
+    padding: 10px;
+    display: block;
+    text-align: left;
+    color: red;
+}
+
+.botao_cancelar{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bolder;
+    border: none;
+    height: 40px;
+    border-radius: 20px;
+    margin-top: 30px;
+    color: white;
+    background-color: black;
+    cursor: pointer;
+    width: 40%;
+    margin-right: 100px;
+}
+
+.botao_cadastrar:hover{
+    background-color: #210070;
+    transition: .5s;
+
+}
+
+.botao_cancelar:hover{
+    background-color: #210070;
+    transition: .5s;
+}
+
+.cad{
+    background-color: white;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 30px;
+    margin-top: 10vh;
+    border-radius: 10px;
+}
+
+/*Esqueceu a senha*/
+
+.sucesso{
+    background-color: green;
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 20px;
+    color: whitesmoke;
+    font-size: 20px;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+}
+
+/*Editar*/
+
+.editar{
+    background-color: #213970;
+}
+
+.cad_editar{
+    background-color: whitesmoke;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px 30px;
+    margin-top: 10vh;
+    border-radius: 10px;
+}
+
+#edit_h1{
+    background-color: #210070;
+    border: solid black;
+    margin-top: 2%;
+}
+
+#edit{
+    margin-bottom: 2%;
+    width: 95%;
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+#edit_label{
+    font-weight: bold;
+    font-size: 20px;
+    color: black;
+    font-weight: bolder;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+}
+
+#btn_editar{
+    background-color: #210070;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    width: 50%;
+    font-weight: bold;
+    margin-left: 25%;
+    border-radius: 15px;
+}
+
+#btn_editar:hover{
+    background-color: green;
+}   
