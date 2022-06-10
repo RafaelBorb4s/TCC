@@ -13,6 +13,7 @@ session_start();
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <script src="app.js"></script>
     <div class="cabeca">
         <a href="index.php"><img class="logotipo" src="img/logo.png" alt="logo"></a>
 
@@ -26,8 +27,8 @@ session_start();
         ?>
 
         <div class="left_sessao">
-            <h2>Bem-Vindo, <?php echo $_SESSION['usuario'];?></h2>
-            <button class="btn_sair" onclick="logout()">Sair</button>
+            <h2>Bem-Vindo, <?php echo ucfirst($_SESSION['usuario']);?></h2>
+            <button class="btn_sair" onclick="logout_index()">Sair</button>
         </div>
 
         <?php

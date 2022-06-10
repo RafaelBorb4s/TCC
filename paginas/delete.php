@@ -7,7 +7,7 @@ $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 $sql_id = "SELECT * FROM `publicacoes` WHERE id = '$id'";
 $resultado = mysqli_query($conexao, $sql_id);
 $linha = mysqli_fetch_assoc($resultado);
-$categoria = $linha['categoria'];
+$categoria = strtolower($linha['categoria']);
 
 if(!empty($id)){
     if(isset($_SESSION['autenticado'])){

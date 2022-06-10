@@ -8,13 +8,15 @@ $erroProduto = "";
 $nome = "";
 
     if(isset($_SESSION['autenticado'])){
-        $nome = $_SESSION['usuario'];
+        $nome = ucfirst($_SESSION['usuario']);
     }
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
         $categoria = "Acessorios"; //Mudar de acordo com a página
-        $valor = limpaPost($_POST['valor']);
+        $var1 = (string) limpaPost($_POST['reais']);
+        $var2 = (string) limpaPost($_POST['centavos']);
+        $valor = $var1.".". $var2;
         $link = limpaPost($_POST['link']);
         $produto = limpaPost($_POST['desc']);
                     
@@ -81,7 +83,7 @@ $nome = "";
         ?>
 
         <div class="left_sessao">
-            <h2>Bem-Vindo, <?php echo $_SESSION['usuario']; ?></h2>
+            <h2>Bem-Vindo, <?php echo ucfirst($_SESSION['usuario']);?></h2>
             <button class="btn_sair" onclick="logout()">Sair</button>
         </div>
 
@@ -145,7 +147,7 @@ $nome = "";
             
             <div class="nome"><p>Usuário: <b><?php echo $nome1; ?></b><a id="editar_publi" <?php echo "href= editar.php?id=$id";?> ><?php if(strtolower($nome) == strtolower($nome1)){echo "Editar";} ?></a><a id="deletar_publi" <?php echo "href= delete.php?id=$id";?>> <?php if(strtolower($nome) == strtolower($nome1)){echo "&#x274C;";} ?></a></p></div>
             <div class="desc"><p>Descrição: <?php echo $produto1; ?></p></div>
-            <div class="Valor"><p>Preço: R$<?php echo $valor1; ?>,00</p></div>
+            <div class="Valor"><p>Preço: R$<?php echo number_format($valor1, 2, ",", "."); ?></p></div>
             <div class="Link_publi"><p><i class="fa-solid fa-link"></i>Link para a oferta: <a target="_blank" id="link_publi" <?php echo "href='".$comentario1."'";?>><?php echo $comentario1; ?> </a></p></div> 
             <div class="data_publi"><p><i class="fa-regular fa-clock"></i> <?php echo $data1; ?> ás <?php echo $hora1; ?></p></div>
            
@@ -179,8 +181,9 @@ $nome = "";
                     <div class="col-25">
                         <label id="label_modal">Valor</label>
                     </div>
-                    <div class="col-75">
-                        <input <?php if(!empty($erroValor)){echo "class = 'invalido'";} ?> type="number" id="input_modal" name="valor" placeholder="Digite o Valor em inteiro aproximado" required>
+                    <div class="col-75-valor">
+                        <p id="simbolos">R$ </p><input <?php if(!empty($erroValor)){echo "class = 'invalido'";} ?> type="number" id="input_modal_reais" name="reais" placeholder="Reais" required><p id="simbolos">,</p> 
+                        <input <?php if(!empty($erroValor)){echo "class = 'invalido'";} ?> type="number" id="input_modal_centavos" name="centavos" placeholder="centavos" required>
                     </div>
                 </div>
 

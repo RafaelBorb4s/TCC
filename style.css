@@ -312,7 +312,7 @@ input:focus{
 }
 
 #deletar_publi{
-    margin-left: 77%;
+    margin-left: 76.5%;
     text-decoration: none;
     color: red;
     position: absolute;
@@ -348,8 +348,7 @@ input:focus{
 
 #link_publi{
     text-decoration: none;
-    background-color: black;
-    color: whitesmoke;
+    color: blue;
 }
 
 .data_publi{
@@ -504,6 +503,39 @@ li a:hover {
     margin-left: 5px;
 }
 
+.col-75-valor{
+    display: flex;
+    flex-wrap: nowrap;
+    float: left;
+    width: 40%;
+    margin-top: 6px;
+    margin-left: 5px;
+}
+
+#input_modal_centavos{
+    width: 25%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    margin-left: 2px;
+}
+
+#input_modal_reais{
+    width: 25%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    margin-left: 5px;
+}
+
+#simbolos{
+    text-align: center;
+    margin-top: 14px;
+    font-size: 20px;
+}
+
 .modal_footer{
     margin-top: 9%;
     padding: 5%;
@@ -537,7 +569,7 @@ li a:hover {
 .botao_publicar{
     position: fixed;
     bottom: 8px;
-    right: 16px;
+    right: 30px;
     font-size: 18px;
     text-align: center;
     text-transform: uppercase;
@@ -561,7 +593,7 @@ li a:hover {
 .botao_publicar_autenticado{
     position: fixed;
     bottom: 8px;
-    right: 16px;
+    right: 30px;
     font-size: 18px;
     text-align: center;
     text-transform: uppercase;
@@ -684,6 +716,24 @@ input.invalido{
 #edit{
     margin-bottom: 2%;
     width: 95%;
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+#edit_reais{
+    margin-bottom: 2%;
+    width: 3%;
+    padding: 15px;
+    border: 1px solid black;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+#edit_centavos{
+    margin-bottom: 2%;
+    width: 3%;
     padding: 15px;
     border: 1px solid black;
     border-radius: 4px;

@@ -7,6 +7,12 @@ $sql = "SELECT * FROM `publicacoes` WHERE id = '$id'";
 $resultado = mysqli_query($conexao, $sql);
 $linha = mysqli_fetch_assoc($resultado);
 
+//Parte dos Valores
+$reais = (integer) $linha['valor'];
+$var = $linha['valor'] - $reais;
+$aux = number_format($var, "2");
+$centavos = $aux * 100;
+
 ?>
 
 <!DOCTYPE html>
@@ -30,8 +36,9 @@ $linha = mysqli_fetch_assoc($resultado);
             <label id="edit_label" for="">Descrição</label>
             <input type="text" id="edit" name="Desc" value="<?php echo $linha['produto']; ?>" required>
 
-            <label id="edit_label" for="">Valor</label>
-            <input type="number" id="edit" name="Valor" value="<?php echo $linha['valor']; ?>" required>
+            <label id="edit_label" for="">Valor<br><br>R$</label>
+            <input type="number" id="edit_reais" name="reais" value="<?php echo $reais; ?>" required>,
+            <input type="number" id="edit_centavos" name="centavos" value="<?php echo $centavos; ?>" required><br>
            
             <label id="edit_label" for="">Link</label>
             <input type="url" id="edit" name="Link" value="<?php echo $linha['link']; ?>" required>

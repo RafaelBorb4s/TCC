@@ -8,13 +8,15 @@ $erroProduto = "";
 $nome = "";
 
     if(isset($_SESSION['autenticado'])){
-        $nome = $_SESSION['usuario'];
+        $nome = ucfirst($_SESSION['usuario']);
     }
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
-        $categoria = "Refrigeracao"; //Mudar de acordo com a página
-        $valor = limpaPost($_POST['valor']);
+        $categoria = "refrigeracao"; //Mudar de acordo com a página
+        $var1 = (string) limpaPost($_POST['reais']);
+        $var2 = (string) limpaPost($_POST['centavos']);
+        $valor = $var1.".". $var2;
         $link = limpaPost($_POST['link']);
         $produto = limpaPost($_POST['desc']);
                     
@@ -32,6 +34,7 @@ $nome = "";
         if(empty($Valor)){
             $erroValor = "Informar o valor do produto";
         }
+
         //Verificar Link
         if(empty($link)){
             $erroLink = "Link em branco";
@@ -57,7 +60,7 @@ $nome = "";
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-    <script src="https://kit.fontawesome.com/0bb8dc907c.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/0bb8dc907c.js" crossorigin="anonymous"></script>   
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -69,7 +72,7 @@ $nome = "";
     <script src="../app.js"></script>
     <div class="cabeca">
         <a href="../index.php"><img class="logotipo" src="../img/logo.png" alt="logo"></a>
-        
+
         <div class="left">
             <a href="login.php"><button class="botao_login">Login</button></a>
             <span class="registrar" ><a href="cadastrar.php"><button class="btn_re">Registrar-se</button></a></span>
@@ -80,7 +83,7 @@ $nome = "";
         ?>
 
         <div class="left_sessao">
-            <h2>Bem-Vindo, <?php echo $_SESSION['usuario']; ?></h2>
+            <h2>Bem-Vindo, <?php echo ucfirst($_SESSION['usuario']);?></h2>
             <button class="btn_sair" onclick="logout()">Sair</button>
         </div>
 
@@ -124,7 +127,7 @@ $nome = "";
 
     <div class="conteudo">
         <?php
-            $seleciona = mysqli_query($conexao, "SELECT * FROM `publicacoes` WHERE categoria = 'Refrigeracao' ORDER BY 'id' DESC"); //Mudar de acordo com a pagina
+            $seleciona = mysqli_query($conexao, "SELECT * FROM `publicacoes` WHERE categoria = 'refrigeracao' ORDER BY 'id' DESC"); //Mudar de acordo com a pagina
             $conta = mysqli_num_rows($seleciona);
 
             if($conta <= 0){
@@ -142,11 +145,11 @@ $nome = "";
 
         <div class="publi">
             
-        <div class="nome"><p>Usuário: <b><?php echo $nome1; ?></b><a id="editar_publi" <?php echo "href= editar.php?id=$id";?> ><?php if(strtolower($nome) == strtolower($nome1)){echo "Editar";} ?></a><a id="deletar_publi" <?php echo "href= delete.php?id=$id";?>> <?php if(strtolower($nome) == strtolower($nome1)){echo "&#x274C;";} ?></a></p></div>
+            <div class="nome"><p>Usuário: <b><?php echo $nome1; ?></b><a id="editar_publi" <?php echo "href= editar.php?id=$id";?> ><?php if(strtolower($nome) == strtolower($nome1)){echo "Editar";} ?></a><a id="deletar_publi" <?php echo "href= delete.php?id=$id";?>> <?php if(strtolower($nome) == strtolower($nome1)){echo "&#x274C;";} ?></a></p></div>
             <div class="desc"><p>Descrição: <?php echo $produto1; ?></p></div>
-            <div class="Valor"><p>Preço: R$<?php echo $valor1; ?>,00</p></div>
+            <div class="Valor"><p>Preço: R$<?php echo number_format($valor1, 2, ",", "."); ?></p></div>
             <div class="Link_publi"><p><i class="fa-solid fa-link"></i>Link para a oferta: <a target="_blank" id="link_publi" <?php echo "href='".$comentario1."'";?>><?php echo $comentario1; ?> </a></p></div> 
-            <div class="data_publi"><p> <i class="fa-regular fa-clock"></i> <?php echo $data1; ?> ás <?php echo $hora1; ?></p></div>
+            <div class="data_publi"><p><i class="fa-regular fa-clock"></i> <?php echo $data1; ?> ás <?php echo $hora1; ?></p></div>
            
             
         </div>
@@ -161,7 +164,7 @@ $nome = "";
 
         <div class="modal_body">
             <div class="modal_form">
-                <div class="btn_fechar" onclick="fechar_modal()">x</div>
+                <div class="btn_fechar" onclick="fechar_modal()">X</div>
                 <div class="titulo_modal"><H2 id="h2_modal">Refrigeração</H2></div>
                 <form method="post">
                 
@@ -178,8 +181,9 @@ $nome = "";
                     <div class="col-25">
                         <label id="label_modal">Valor</label>
                     </div>
-                    <div class="col-75">
-                        <input <?php if(!empty($erroValor)){echo "class = 'invalido'";} ?> type="number" id="input_modal" name="valor" placeholder="Digite o Valor em inteiro aproximado" required>
+                    <div class="col-75-valor">
+                        <p id="simbolos">R$ </p><input <?php if(!empty($erroValor)){echo "class = 'invalido'";} ?> type="number" id="input_modal_reais" name="reais" placeholder="Reais" required><p id="simbolos">,</p> 
+                        <input <?php if(!empty($erroValor)){echo "class = 'invalido'";} ?> type="number" id="input_modal_centavos" name="centavos" placeholder="centavos" required>
                     </div>
                 </div>
 

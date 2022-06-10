@@ -53,3 +53,7 @@ function erro(){
 function logout(){
     window.location.replace("logout.php");
 }
+
+function logout_index(){
+    window.location.replace("paginas/logout.php");
+}
