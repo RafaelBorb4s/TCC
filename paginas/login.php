@@ -9,9 +9,10 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style_responsive.css">
     <link rel="shortcut icon" href="../img/icon.svg" type="image/x-icon">
     <title>Login</title>
-    <div class="logotipo"><a href="../index.php"><img src="../img/logo.png" alt="logo"></a></div>
+    <div class="logotipo"><a href="../index.php"><img class="logotipo_login" src="../img/logo.png" alt="logo"></a></div>
 </head>
 <body class="logar">
     <script src="../app.js"></script>

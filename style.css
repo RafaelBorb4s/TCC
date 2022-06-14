@@ -3,10 +3,6 @@
     padding: 0;
 }
 
-#ultimas{
-    width: 15.5%;
-}
-
 h1{
     background-color: #210070;
     border: 2px solid #210070;
@@ -15,6 +11,10 @@ h1{
     text-align: center;
     background-color: #210070;
     padding: 10px;
+}
+
+.coluna img{
+    width: 100%;
 }
 
 .container{
@@ -28,9 +28,8 @@ h1{
 }
 
 h3{
-    background-color: #213970;
-    color: white;
-    position: absolute;
+    color: whitesmoke;
+    text-shadow: 0 0 3px black, 0 0 5px black;
     bottom: 0px;
     left: 0px;
     width: 100%;
@@ -38,22 +37,26 @@ h3{
     font-size: 1.2rem;
 }
 
-h3:hover{
-    background-color: white;
-    color: black;
-}
-
 .titulo{
     padding: 20px;
     width: 78%;
 }
 
-#inicio .coluna{
+a{
+    text-decoration: none;
+}
+
+.coluna{
     position: relative;
     margin: 0px;
     padding: 1px;
     border: 1px solid white;
     max-width: 25%;
+    background-color: #213970;
+}
+
+.coluna:hover{
+    background-color: white;
 }
 
 #pesquisar{
@@ -79,7 +82,7 @@ h3:hover{
 
 .center{
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
 }
 
 .cabeca{
@@ -109,7 +112,7 @@ h3:hover{
     background-color: #210070;
     border: none;
     color: white;
-    padding: 10px 26px;
+    padding: 8px 16px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -137,7 +140,6 @@ h3:hover{
 }
 
 .left_sessao{
-    background-color: white;
     position: absolute;
     top: 30px;
     right: 16px;
@@ -324,7 +326,6 @@ input:focus{
     width: 25%;
     margin-left: 40%;
     padding: 1%;
-    
 }
 
 /*Publicações*/
@@ -344,11 +345,10 @@ input:focus{
     padding: 10px;
 }
 
-
-
 #link_publi{
     text-decoration: none;
     color: blue;
+    word-wrap: break-word;
 }
 
 .data_publi{

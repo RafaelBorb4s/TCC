@@ -18,28 +18,26 @@ $nome = "";
     <link rel="shortcut icon" href="../img/icon.svg" type="image/x-icon">
     <title>TCC</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style_responsive.css">
 </head>
 <body>
     <script src="../app.js"></script>
     <div class="cabeca">
         <a href="../index.php"><img class="logotipo" src="../img/logo.png" alt="logo"></a>
 
-        <div class="left">
-            <a href="login.php"><button class="botao_login">Login</button></a>
-            <span class="registrar" ><a href="cadastrar.php"><button class="btn_re">Registrar-se</button></a></span>
-        </div>
-
         <?php
-            if(isset($_SESSION['autenticado'])):
-        ?>
-
-        <div class="left_sessao">
-            <h2>Bem-Vindo, <?php echo ucfirst($_SESSION['usuario']);?></h2>
-            <button class="btn_sair" onclick="logout()">Sair</button>
-        </div>
-
-        <?php
-            endif;
+            if(isset($_SESSION['autenticado'])){
+                $nome_usuario = ucfirst($_SESSION['usuario']);
+                echo "<div class=".'left_sessao'.">
+                <h2>Bem-Vindo, $nome_usuario</h2>
+                <button class=".'btn_sair'." onclick=".'logout()'.">Sair</button>
+            </div>";
+            }else{
+                echo "<div class=".'left'.">
+                <a href=".'login.php'."><button class=".'botao_login'.">Login</button></a>
+                <span class=".'registrar'." ><a href=".'cadastrar.php'."><button class=".'btn_re'.">Registrar-se</button></a></span>
+            </div>";
+            }
         ?>
         
     </div>

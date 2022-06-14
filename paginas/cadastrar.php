@@ -90,9 +90,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../style_responsive.css">
     <link rel="shortcut icon" href="../img/icon.svg" type="image/x-icon">
     <title>Cadastro</title>
-    <div class="logotipo"><a href="../index.php"><img src="../img/logo.png" alt="logo"></a></div>
+    <div class="logotipo"><a href="../index.php"><img class="logotipo_login" src="../img/logo.png" alt="logo"></a></div>
 </head>
 <body class="logar">
     <div class="cad">
@@ -117,6 +118,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
             <button class="botao_cancelar" onclick = "cancelar(); return false">Cancelar</button>
             <button class="botao_cadastrar" name="cadastrar">Cadastrar</button>
+
+            
         </form>
     </div>
 </body>
