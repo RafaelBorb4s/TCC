@@ -78,7 +78,15 @@ $nome = "";
         <?php
             date_default_timezone_set('America/Sao_Paulo');
             $data_atual = date("d/m/Y");
-            $seleciona = mysqli_query($conexao, "SELECT * FROM `publicacoes` WHERE data = '$data_atual' ORDER BY 'id' DESC"); //Mudar de acordo com a pagina
+            $hora_atual = date("H:i");
+
+            //Ontem
+            $d = date("d");
+            $m = date("m");
+            $Y = date("Y");
+            $ontem = date("d/m/Y", mktime(0, 0, 0, $m, $d-1, $Y));
+            
+            $seleciona = mysqli_query($conexao, "SELECT * FROM `publicacoes` WHERE data = '$data_atual' or data = '$ontem' ORDER BY id DESC");
             $conta = mysqli_num_rows($seleciona);
 
             if($conta <= 0){
@@ -91,21 +99,25 @@ $nome = "";
                     $comentario1 = $row['link'];
                     $valor1 = $row['valor'];
                     $data1 = $row['data'];
-                    $hora1 = $row['hora'];   
+                    $hora1 = $row['hora'];
+                    $formatado_certo_atual = $data_atual." ".$hora_atual;
+                    $formatado_certo_publi = $data1." ".$hora1;
+                    $atual = DateTime::createFromFormat("d/m/Y H:i" , $formatado_certo_atual);
+                    $postagem = DateTime::createFromFormat("d/m/Y H:i" , $formatado_certo_publi);
+                    $diferenca = $atual->diff($postagem);
+                    iF($diferenca->h < 24 && $diferenca->d < 1){   
         ?>
 
         <div class="publi">
-            
-            <div class="nome"><p>Usuário: <b><?php echo $nome1; ?></b><a id="editar_publi" <?php echo "href= editar.php?id=$id";?> ><?php if(strtolower($nome) == strtolower($nome1)){echo "Editar";} ?></a><a id="deletar_publi" <?php echo "href= delete.php?id=$id";?>> <?php if(strtolower($nome) == strtolower($nome1)){echo "&#x274C;";} ?></a></p></div>
-            <div class="desc"><p>Descrição: <?php echo $produto1; ?></p></div>
-            <div class="Valor"><p>Preço: R$<?php echo number_format($valor1, 2, ",", "."); ?></p></div>
-            <div class="Link_publi"><p><i class="fa-solid fa-link"></i>Link para a oferta: <a target="_blank" id="link_publi" <?php echo "href='".$comentario1."'";?>><?php echo $comentario1; ?> </a></p></div> 
-            <div class="data_publi"><p><i class="fa-regular fa-clock"></i> <?php echo $data1; ?> ás <?php echo $hora1; ?></p></div>
-           
-            
+                        <div class="nome"><p>Usuário: <b><?php echo $nome1; ?></b><a id="editar_publi" <?php echo "href= editar.php?id=$id";?> ><?php if(strtolower($nome) == strtolower($nome1)){echo "Editar";} ?></a><a id="deletar_publi" <?php echo "href= delete.php?id=$id";?>> <?php if(strtolower($nome) == strtolower($nome1)){echo "&#x274C;";} ?></a></p></div>
+                        <div class="desc"><p>Descrição: <?php echo $produto1; ?></p></div>
+                        <div class="Valor"><p>Preço: R$<?php echo number_format($valor1, 2, ",", "."); ?></p></div>
+                        <div class="Link_publi"><p><i class="fa-solid fa-link"></i>Link para a oferta: <a target="_blank" id="link_publi" <?php echo "href='".$comentario1."'";?>><?php echo $comentario1; ?> </a></p></div> 
+                        <div class="data_publi"><p><i class="fa-regular fa-clock"></i> <?php echo $data1; ?> ás <?php echo $hora1; ?></p></div> 
         </div>
 
         <?php
+                    }
                 }
             }
         ?>
