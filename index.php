@@ -1,5 +1,6 @@
 <?php
 session_start();
+include_once("processa.php");
 ?>
 
 <!DOCTYPE html>
@@ -23,8 +24,9 @@ session_start();
                 $nome_usuario = ucfirst($_SESSION['usuario']);
                 echo "<div class=".'left_sessao'.">
                 <h2>Bem-Vindo, $nome_usuario</h2>
+                <a href=".'paginas/editar_perfil.php'."><button class = ".'btn_editar_perfil'.">Editar Perfil</button> </a>
                 <button class=".'btn_sair'." onclick=".'logout_index()'.">Sair</button>
-            </div>";
+                </div>";
             }else{
                 echo "<div class=".'left'.">
                 <a href=".'paginas/login.php'."><button class=".'botao_login'.">Login</button></a>
@@ -32,8 +34,6 @@ session_start();
             </div>";
             }
         ?>
-
-        
         
     </div>
     <h1>Comunidade de Ofertas!</h1>

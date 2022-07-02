@@ -108,6 +108,19 @@ a{
     text-align: center;
 }
 
+.btn_editar_perfil{
+    background-color: #210070;
+    border: none;
+    color: white;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 16px;
+    left: 10%;
+}
+
 .btn_re, .btn_sair{
     background-color: #210070;
     border: none;
@@ -127,7 +140,6 @@ a{
 }
 
 .btn_sair{
-    margin-left: 17%;
     margin-top: 2%;
 }
 
@@ -174,9 +186,52 @@ h2{
     line-height: 200px;
 }
 
+/*Parte de editar perfil*/
+
+.form_perfil{
+    background-color: white;
+    width: 50%;
+    margin-left: 25%;
+    padding: 20px 30px;
+    margin-top: 100px;
+}
+
+.grid{
+    display: grid;
+    margin-top: 30px;
+    grid-template-columns: auto auto auto auto;
+    gap: 10px;
+    background-color: white;
+    padding: 10px;
+}
+
+.grid a {
+    text-decoration: none;
+    color: black;
+}
+
+.grid > div.active{
+    background-color: black;
+    color: white;
+    text-decoration: underline;
+}
+
+.grid a.active{
+    background-color: black;
+    color: white;
+}
+
+.grid > div{
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid black;
+    text-align: center;
+    font-size: 30px;
+    font-style: italic;
+    font-family: Arial, Helvetica, sans-serif;
+}
 /* Parte da pagina de login */
 
-.logar{
+.logar, .perfil{
     background-color: #213970;
 }
 
@@ -205,7 +260,7 @@ h2{
     margin-bottom: 40px;
 }
 
-#login_usuario, #login_senha, #login_input_usuario, #login_input_senha, #cadconfsenha, #cadpassword, #cademail, #cadusuario{
+#login_usuario, #login_senha, #login_input_usuario, #login_input_senha, #cadconfsenha, #cadpassword, #cademail, #cadusuario, #edpassword{
     display: block;
     width: 100%;
     text-align: left;
@@ -217,7 +272,7 @@ h2{
     padding: 5px;
 }
 
-#login_input_usuario, #login_input_senha, #cadconfsenha, #cadpassword, #cademail, #cadusuario{
+#login_input_usuario, #login_input_senha, #cadconfsenha, #cadpassword, #cademail, #cadusuario, #edpassword{
     border-bottom: 2px solid #213970;
     padding: 10px;
     font-size: 1rem;
@@ -305,20 +360,20 @@ input:focus{
 }
 
 #editar_publi{
-    margin-left: 73%;
-    position: absolute;
     cursor: pointer;
     text-decoration: none;
     color: black;
     font-weight: bold;
+    position: absolute;
+    left: 85%;
 }
 
 #deletar_publi{
-    margin-left: 76.5%;
     text-decoration: none;
     color: red;
-    position: absolute;
     cursor: pointer;
+    position: absolute;
+    left: 90%;
 }
 
 .confirma{
@@ -503,6 +558,10 @@ li a:hover {
     margin-left: 5px;
 }
 
+.col-75 > div{
+    padding: 11px;
+}
+
 .col-75-valor{
     display: flex;
     flex-wrap: nowrap;
@@ -512,21 +571,12 @@ li a:hover {
     margin-left: 5px;
 }
 
-#input_modal_centavos{
-    width: 25%;
-    padding: 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    resize: vertical;
-    margin-left: 2px;
-}
-
 #input_modal_reais{
     width: 25%;
-    padding: 12px;
+    padding: 1px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    resize: vertical;
+    margin-top: 6px;
     margin-left: 5px;
 }
 
@@ -724,7 +774,7 @@ input.invalido{
 
 #edit_reais{
     margin-bottom: 2%;
-    width: 3%;
+    width: 5%;
     padding: 15px;
     border: 1px solid black;
     border-radius: 4px;

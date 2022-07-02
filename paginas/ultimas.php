@@ -1,6 +1,7 @@
 <?php
 session_start();
 include_once("../conexao.php");
+include_once("../processa.php");
 $nome = "";
 
     if(isset($_SESSION['autenticado'])){
@@ -30,6 +31,7 @@ $nome = "";
                 $nome_usuario = ucfirst($_SESSION['usuario']);
                 echo "<div class=".'left_sessao'.">
                 <h2>Bem-Vindo, $nome_usuario</h2>
+                <a href=".'editar_perfil.php'."><button class = ".'btn_editar_perfil'.">Editar Perfil</button> </a>
                 <button class=".'btn_sair'." onclick=".'logout()'.">Sair</button>
             </div>";
             }else{
@@ -62,7 +64,7 @@ $nome = "";
             <li><a href="monitor.php">Monitor</a></li>
             <li><a href="mouse.php">Mouse/MousePad</a></li>
             <li><a href="pc_notebook.php">PC/Notebook</a></li>
-            <li><a href="placa_de_video.php">Placa-De-Vídeo</a></li>
+            <li><a href="placa_de_video.php">Placa De Vídeo</a></li>
             <li><a href="placa_mae.php">Placa-Mãe</a></li>
             <li><a href="processador.php">Processador</a></li>
             <li><a href="refrigeracao.php">Refrigeração</a></li>
@@ -100,12 +102,13 @@ $nome = "";
                     $valor1 = $row['valor'];
                     $data1 = $row['data'];
                     $hora1 = $row['hora'];
+
                     $formatado_certo_atual = $data_atual." ".$hora_atual;
                     $formatado_certo_publi = $data1." ".$hora1;
                     $atual = DateTime::createFromFormat("d/m/Y H:i" , $formatado_certo_atual);
                     $postagem = DateTime::createFromFormat("d/m/Y H:i" , $formatado_certo_publi);
                     $diferenca = $atual->diff($postagem);
-                    iF($diferenca->h < 24 && $diferenca->d < 1){   
+                    if($diferenca->h < 24 && $diferenca->d < 1){   
         ?>
 
         <div class="publi">

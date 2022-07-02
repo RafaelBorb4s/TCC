@@ -14,14 +14,17 @@ function exibeSenha(){
 
 function exibeSenhaCad(){
     var senha = document.getElementById("cadpassword"); 
-    var confSenha = document.getElementById("cadconfsenha"); 
+    var confSenha = document.getElementById("cadconfsenha");
+    var cadSenha = document.getElementById("edpassword");
 
     if(senha.type == "password"){
         senha.type = "text";
         confSenha.type = "text";
+        cadSenha.type = "text";
     }else{
         senha.type = "password";
         confSenha.type = "password";
+        cadSenha.type = "password";
     }
 }
 

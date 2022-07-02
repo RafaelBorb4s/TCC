@@ -63,7 +63,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
     //Insere o usuario na Tabelda de SQL
     if(($errousuario == "") && ($erroemail == "") && ($errosenha == "") && ($erroConfirmeSenha == "")){
 
-        $usuario = $_POST['usuario'];
+        $usuario = strtolower($_POST['usuario']);
         $email = $_POST['email'];
         $senha = $_POST['cadpassword'];
         $senha_cript = sha1($senha);
